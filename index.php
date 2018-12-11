@@ -6,8 +6,19 @@ require_once('classes/models/newsmodel.php');
 $newsM =  new NewsModel('https://www.jv.dk/rss/nyheder');
 $newsMBT =  new NewsModel('https://www.berlingske.dk/content/rss');
 $newsM->merge($newsMBT);
+$date = array();
+$articles = $newsM->getArticles();
+function cmp($a, $b){
+	// need to make date comparison !!!
+	return strcmp($a->getDate(), $b->getDate());
+}
+usort($articles, "cmp");
+foreach ($articles as $key => $article) {
+	$date[$key] = $article->getDate();
+}
+array_multisort($date, SORT_DESC, $articles);
 echo "<pre>";
-print_r($newsM);
+print_r($articles);
 echo "</pre>";
 /*
 $xml = simplexml_load_file('https://www.berlingske.dk/content/rss', 'SimpleXMLElement', LIBXML_NOCDATA);
