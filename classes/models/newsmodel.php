@@ -56,6 +56,9 @@ class NewsModel extends Model {
     public function getDate(){
         return $this->params['date'];
     }
+    public function getParams(){
+        return $this->params;
+    }
     // setters
     public function setArticles($val){
         $this->articles = $val;
@@ -74,6 +77,9 @@ class NewsModel extends Model {
     }
     public function setDate($val){
         $this->params['date'] = $val;
+    }
+    public function setParams(){
+        return $this->params;
     }
     // tools
     public function merge($obj){
