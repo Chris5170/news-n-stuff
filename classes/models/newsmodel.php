@@ -85,5 +85,16 @@ class NewsModel extends Model {
     public function merge($obj){
         $this->articles = array_merge($this->articles, $obj->getArticles());
     }
+    public function sort($order = "desc"){
+        usort($this->articles, array($this, "cmp" . $order));
+    }
+    /* !! REMEMBER TO WRITE IT FOR DATE COMPARISON !! */
+    private function cmpasc($a, $b){
+        return strcmp($a->getDate(), $b->getDate());
+    }
+    private function cmpdesc($a, $b){
+        return strcmp($b->getDate(), $a->getDate());
+    }
+    
 }
 ?>
