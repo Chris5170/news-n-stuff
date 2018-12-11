@@ -1,5 +1,16 @@
 <?php
-$xml = simplexml_load_file('https://www.jv.dk/rss/nyheder', 'SimpleXMLElement', LIBXML_NOCDATA);
+
+session_start();
+define('rootPath', '');
+require_once('classes/models/newsmodel.php');
+$newsM =  new NewsModel('https://www.jv.dk/rss/nyheder');
+$newsMBT =  new NewsModel('https://www.berlingske.dk/content/rss');
+$newsM->merge($newsMBT);
+echo "<pre>";
+print_r($newsM);
+echo "</pre>";
+/*
+$xml = simplexml_load_file('https://www.berlingske.dk/content/rss', 'SimpleXMLElement', LIBXML_NOCDATA);
 foreach ($xml->channel->item as $item) {
 	if(isset($item->title)){
 		$arr['title'] = (string)$item->title;
@@ -23,12 +34,16 @@ foreach ($xml->channel->item as $item) {
 		$arr['pictureLink'] = (string)$item->pictureLink;
 		echo "<img src='" . (string)$item->pictureLink .  "''>";
 	}
+	if(isset($item->enclosure)){
+		$arr['pictureLink'] = (string)$item->enclosure->attributes()['url'];
+		echo "<img src='" . preg_replace('/\/image_(.*?)\//', '/image_x_large/', (string)$item->enclosure->attributes()['url']) .  "''>";
+	}
 	if(isset($item->photographer)){
 		$arr['photographer'] = (string)$item->photographer;
 	}
 	$news[] = $arr;
-}
+*/
 ?>
 <pre>
-<?php print_r($news); ?>
+<?php //print_r($xml); ?>
 </pre>
