@@ -1,0 +1,191 @@
+/* All PHP tags here */
+
+body {
+    margin: 0;
+    padding: 0;
+}
+header i {
+    color: white;
+}
+#ungeNav {
+    height: 8em;
+    background-color: darkgrey;
+}
+nav#topNav {
+    background-color: black;
+    color: white;
+    display: flex;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    font-size: 2em;
+}
+nav#topNav ul li {
+    margin-right: 1em;
+}
+nav#topNav a:visited {
+    color: white;
+}
+nav#topNav ul li:first-child {
+    position: absolute;
+    left: 15px;
+}
+nav ul {
+    text-decoration: none;
+    list-style-type: none;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+p, h1, a {
+    font-family: "Open Sans";
+    text-decoration: none;
+    
+}
+a:visited {
+    color: black;
+}
+
+/* All IDs here */
+
+
+#primary {
+    
+}
+#ungeNav {
+    
+}
+#ungeNavContainer {
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    width: 100%;
+}
+
+/* All CLASSES here */
+
+.left {
+    position: absolute;
+    left: 20px;
+}
+.right {
+    position: absolute;
+    right: 20px;
+}
+.catBox {
+    display: flex;
+    position: relative;
+    top: -20px;
+    height: 2em;
+    background-color: red;
+    align-items: center;
+}
+.catBox p {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+.Headline {
+    display: flex;
+    max-width: 100%;
+    width: 100%;
+    margin-top: 2em;
+}
+.Headline article {
+    max-height: 30em;
+    max-width: 30em;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+.Headline img {
+    display: flex;
+    object-fit: cover;
+    object-position: 50% 0;
+    height: 30em;
+    width: 30em;
+}
+.Headline h1 {
+    font-size: 2em;
+    margin: 0;
+}
+.ungeNewsSlider {
+    display: flex;
+    background-color: darkgrey;
+    max-height: 12em;
+    margin-top: 6em;
+    margin-bottom: 6em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+.newsThumbnail {
+    display: flex;
+    max-height: 100%;
+}
+.newsThumbnail article {
+    margin: 1em;
+    position: relative;
+}
+.newsTitleBox {
+    background-color: rgba(0,0,0,0.4);
+    position: absolute;
+    height: 3em;
+    width: 100%;
+    top: 7em;
+    color: white;
+}
+.newsTitleBox h1{
+    margin-left: 0.5em;
+}
+.ungeNewsSlider img {
+    display: flex;
+    object-fit: cover;
+    object-position: 50% 0;
+    height: 10em;
+    width: 10em;
+}
+.navBtn {
+    max-width: 5%;
+    display: flex;
+    font-size: 6em;
+    max-height: 4em;
+}
+.navSlider {
+    display: flex;
+    max-width: 80%;
+}
+.navSlider a {
+    margin-left: 2em;
+    margin-right: 2em;}
+.navSlider img {
+    max-height: 5em;
+}
+.ungeSliderContent {
+    display: flex;
+    max-width: 100%;
+    width: 100%;
+}
+.articleEnv {
+    display: flex;
+    flex-wrap: wrap;
+}
+.articleEnv article {
+    display: flex;
+    max-width: 21em;
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-bottom: 1em;
+    position: relative;
+}
+.articleEnv img {
+    display: flex;
+    object-fit: cover;
+    object-position: 50% 0;
+    width: 21em;
+    height: 21em;
+}
+.wrap {
+    max-width: 70em!important;
+    width: 70em!important;
+    margin-left: auto;
+    margin-right: auto;
+}
