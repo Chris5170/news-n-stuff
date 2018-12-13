@@ -15,6 +15,7 @@
 					<li><a href="#">FORSIDE</a></li>
 					<li><a href="#">NEWS!</a></li>
 					<li class="active"><a href="#">TIL DIG</a></li>
+					<li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
 				</ul> 
 			</nav>
 			<form class="search">
