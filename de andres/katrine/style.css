@@ -63,8 +63,9 @@ header .center{
 	background: none;
 	border:none;
 	color: #8e2a2a;
-	font-size: 1em;
-}
+	font-size: 1.5em;
+	cursor: pointer;
+ }
 
 #articles{
 	display: flex;
@@ -73,15 +74,22 @@ header .center{
 }
 
 #articles article:nth-child(odd){
-	width: calc(50% - 2em);
-	margin-right:2em;
-	margin-top: 4em;
+	width: calc(50% - 1em);
+	margin-right:1em;
+	margin-top: 3em;
+	padding-bottom: 1em;
+	border-bottom: 3px solid #8e2a2a;
 }
 
 #articles article:nth-child(even){
-	width: calc(50% - 2em);
-	margin-left:2em;
-	margin-top: 4em;
+	width: calc(50% - 1em);
+	margin-left:1em;
+	margin-top: 3em;
+	padding-bottom: 1em;
+	border-bottom: 3px solid #8e2a2a;
+}
+#articles article:nth-child(-n+2){
+	margin-top: 2em;
 }
 
 #articles article img{
@@ -90,7 +98,7 @@ header .center{
 
 #articles article a{
 	color: #8e2a2a;
-	font-weight: 600; /* Semibold=600 */
+	font-weight: 600;
 
 }
 footer{

@@ -1,41 +1,52 @@
 /* All PHP tags here */
 
-body {
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
-header i {
-    color: white;
+i {
+    color: #fff;
+    transition: .5s ease;
+}
+i:hover{
+    transition: .5s ease;
+}
+footer {
+    background: #3e3e3e;
 }
 #ungeNav {
-    height: 8em;
-    background-color: darkgrey;
+    background-color: #bbb;
 }
-nav#topNav {
+#topNav {
     background-color: black;
     color: white;
     display: flex;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    font-size: 2em;
+    padding-top: .2em;
+    padding-bottom: .2em;
+    font-size: 1.2em;
 }
-nav#topNav ul li {
+#topNav ul li {
     margin-right: 1em;
 }
-nav#topNav a:visited {
+#topNav a:visited {
     color: white;
 }
-nav#topNav ul li:first-child {
-    position: absolute;
-    left: 15px;
+#topNav a {
+    color: #fff;
 }
-nav ul {
+#topNav .wrap {
+    display: flex;
+    justify-content: space-between;
+    
+}
+#topNav ul{
     text-decoration: none;
     list-style-type: none;
-    margin: 0;
+}
+#topNav ul:last-child{
     display: flex;
-    justify-content: flex-end;
-    width: 100%;
+    flex-flow: row wrap:;
 }
 p, h1, a {
     font-family: "Open Sans";
@@ -57,45 +68,49 @@ a:visited {
 }
 #ungeNavContainer {
     display: flex;
-    align-items: center;
-    max-width: 100%;
-    width: 100%;
 }
 
 /* All CLASSES here */
 
-.left {
+/*.left {
     position: absolute;
     left: 20px;
 }
 .right {
     position: absolute;
     right: 20px;
-}
+}*/
 .catBox {
     display: flex;
-    position: relative;
-    top: -20px;
-    height: 2em;
-    background-color: red;
+    position: absolute;
+    bottom: 0;
     align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    width: 100%;
+}
+.navSlider a:nth-of-type(4n+1) .catBox{
+    background: red;
+}
+.navSlider a:nth-of-type(4n+2) .catBox{
+    background: green;
+}
+.navSlider a:nth-of-type(4n+3) .catBox{
+    background: blue;
+}
+.navSlider a:nth-of-type(4n+4) .catBox{
+    background: orange;
 }
 .catBox p {
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
+    padding: 0.3rem .7rem;
 }
-.Headline {
+section.Headline {
     display: flex;
-    max-width: 100%;
-    width: 100%;
-    margin-top: 2em;
-}
-.Headline article {
-    max-height: 30em;
-    max-width: 30em;
-    margin-left: 1em;
-    margin-right: 1em;
+    justify-content: space-around;
+    flex-flow: row wrap;
+    margin-top: 3em;
 }
 .Headline img {
     display: flex;
@@ -110,16 +125,16 @@ a:visited {
 }
 .ungeNewsSlider {
     display: flex;
-    background-color: darkgrey;
-    max-height: 12em;
-    margin-top: 6em;
-    margin-bottom: 6em;
-    padding-left: 1em;
-    padding-right: 1em;
+    background-color: #bbb;
+    margin: 3em auto;
+    padding: 0 1em;
+    align-items: center;
+    justify-content: space-between;
 }
 .newsThumbnail {
     display: flex;
-    max-height: 100%;
+    width: 90%;
+    overflow: hidden;
 }
 .newsThumbnail article {
     margin: 1em;
@@ -130,7 +145,7 @@ a:visited {
     position: absolute;
     height: 3em;
     width: 100%;
-    top: 7em;
+    bottom: 0;
     color: white;
 }
 .newsTitleBox h1{
@@ -138,43 +153,44 @@ a:visited {
 }
 .ungeNewsSlider img {
     display: flex;
-    object-fit: cover;
-    object-position: 50% 0;
     height: 10em;
     width: 10em;
 }
 .navBtn {
-    max-width: 5%;
-    display: flex;
     font-size: 6em;
-    max-height: 4em;
 }
 .navSlider {
     display: flex;
-    max-width: 80%;
+    overflow: hidden;
+    align-items: center;
+    justify-content: space-between;
 }
 .navSlider a {
-    margin-left: 2em;
-    margin-right: 2em;}
+    margin: .5em 2em;
+    align-items: center;
+    display: flex;
+    flex-flow: row wrap;
+    position: relative;
+}
 .navSlider img {
     max-height: 5em;
+    margin-bottom: .7em;
 }
 .ungeSliderContent {
     display: flex;
-    max-width: 100%;
-    width: 100%;
+    max-width: 90%;
 }
 .articleEnv {
     display: flex;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
+    justify-content: space-between;
 }
 .articleEnv article {
     display: flex;
-    max-width: 21em;
-    margin-left: 1em;
-    margin-right: 1em;
-    margin-bottom: 1em;
     position: relative;
+    min-width: 15em;
+    max-width: 21em;
+    margin-bottom: 1rem;
 }
 .articleEnv img {
     display: flex;
@@ -184,8 +200,41 @@ a:visited {
     height: 21em;
 }
 .wrap {
-    max-width: 70em!important;
-    width: 70em!important;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 70rem;
+    margin: 0 auto;
+    width: 100%;
+}
+.some{
+    display: flex;
+    justify-content: space-between;
+    padding: 1em 0;
+    align-items: flex-end;
+}
+.some ul{
+    display: flex;
+    flex-flow: row wrap;
+    list-style-type: none;
+    font-size: 1.7em;
+}
+.some li{
+    font-family: 'Fredericka the great';
+    color: #fff;
+}
+.some li:not(:last-child){
+    margin-right: 1em;
+}
+.some img{
+    max-width: 7em;
+}
+.fa-facebook-square:hover{
+    color: #3b5998;
+}
+.fa-instagram:hover{
+    color: #e1306c;
+}
+.fa-linkedin:hover{
+    color: #0077b5;
+}
+.fa-snapchat:hover{
+    color: #fffc00;
 }
