@@ -7,10 +7,14 @@ class NewsView extends View {
     	parent::__construct($model);
     }
     public function addTitle(){
-        $this->str .= "<h2>" . $this->model->getParams()['title'] . "</h2>";
+        if(isset($this->model->getParams()['title'])){
+            $this->str .= "<h2>" . $this->model->getParams()['title'] . "</h2>";
+        }
     }
     public function addExcerpt(){
-        $this->str .= "<p>" . $this->model->getParams()['excerpt'] . "</p>";
+        if(isset($this->model->getParams()['excerpt'])){
+            $this->str .= "<p>" . $this->model->getParams()['excerpt'] . "</p>";
+        }
     }
     public function addThumb(){
         if(isset($this->model->getParams()['thumb'])){
@@ -18,10 +22,14 @@ class NewsView extends View {
         }
     }
     public function addLink(){
-        $this->str .= "<a href='" . $this->model->getParams()['link'] . "'>Læs fulde historie</a>";
+        if(isset($this->model->getParams()['link'])){
+            $this->str .= "<a href='" . $this->model->getParams()['link'] . "'>Læs fulde historie</a>";
+        }
     }
     public function addDate(){
-        $this->str .= "<span>" . $this->model->getParams()['date'] . "</span>";
+        if(isset($this->model->getParams()['date'])){
+            $this->str .= "<span>" . $this->model->getParams()['date'] . "</span>";
+        }
     }
     public function build(){
         return $this->str;
