@@ -9,7 +9,7 @@
 <body>
 	<header>
 		<div class="center">
-			<a href="#"><img src="elementer/logo.png" id="logo"></a> <!-- logo -->
+			<a href="#"><img src="elementer/logo.png" class="logo"></a> <!-- logo -->
 			<nav id="main_nav"> 
 				<ul>
 					<li><a href="#">FORSIDE</a></li>
@@ -86,15 +86,15 @@
 			</div>
 		</section>
 	</main>
-	<footer>
-		<div class="center">
-			<ul>
-				<li>TLF: <a href="tel:01234567">+45 01 23 45 67</a></li>
-				<li>MAIL: <a href="mailto:kontakt@mail.dk">kontakt@mail.dk</a></li>
-			</ul>
-			<a href="#"><img src="elementer/csr.png" id="logo"></a> <!-- CSR mærkat -->		
-			<a href="#"><img src="elementer/logo.png" id="logo"></a> <!-- logo -->
-		</div>
-	</footer>
+<footer>
+	<div class="center">
+		<ul>
+			<li>TLF: <a href="tel:01234567">+45 01 23 45 67</a></li>
+			<li>MAIL: <a href="mailto:kontakt@mail.dk">kontakt@mail.dk</a></li>
+		</ul>
+		<a href="#"><img src="elementer/meemiq.png" class=logo"></a> <!-- CSR mærkat -->		
+		<a href="#"><img src="elementer/logo.png" class="logo"></a> <!-- logo -->
+	</div>
+</footer>
 </body>
 </html>

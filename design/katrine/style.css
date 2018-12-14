@@ -27,7 +27,7 @@ header .center{
 	height: 3em;
 }
 
-#logo{
+.logo{
 	max-width: 100px;
 }
 
@@ -112,10 +112,8 @@ footer .center{
 	justify-content: space-between;
 	align-items: center;
 }
-
 footer ul li{
 	list-style: none;
-
 }
 
 

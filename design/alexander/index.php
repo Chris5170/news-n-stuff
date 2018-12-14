@@ -121,7 +121,12 @@ and open the template in the editor.
                 </div>
                 <div class="newsThumbnail">
                     <article>
-                        <a href="#"><img src="https://via.placeholder.com/400x400.png?text=Placeholder"><div class="newsTitleBox"><h1>Title.</h1></div></a>
+                        <a href="#">
+                            <img src="https://via.placeholder.com/400x400.png?text=Placeholder">
+                            <div class="newsTitleBox">
+                                <h1>Title.</h1>
+                            </div>
+                        </a>
                     </article>
                     <article>
                         <a href="#"><img src="https://via.placeholder.com/400x400.png?text=Placeholder"><div class="newsTitleBox"><h1>Title.</h1></div></a>

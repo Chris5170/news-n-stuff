@@ -2,8 +2,8 @@
 <html>
 <head>
 	<title>Joachim</title>
-        <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Open+Sans" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
     <header class="header_container">
@@ -107,7 +107,7 @@
 		  </a>
 		</div>
 	</section>
-     <footer class="footer-container">
+    <footer class="footer-container">
         <div class="footer">
             <div class="some">
                 <img src="https://cdn0.iconfinder.com/data/icons/shift-free/32/Facebook-512.png" alt="Facebook" height="32" width="32">
