@@ -13,7 +13,9 @@ class NewsView extends View {
         $this->str .= "<p>" . $this->model->getParams()['excerpt'] . "</p>";
     }
     public function addThumb(){
-        $this->str .= "<img src='" . $this->model->getParams()['thumb'] . "' alt=''>";
+        if(isset($this->model->getParams()['thumb'])){
+            $this->str .= "<img src='" . $this->model->getParams()['thumb'] . "' alt=''>";
+        }
     }
     public function addLink(){
         $this->str .= "<a href='" . $this->model->getParams()['link'] . "'>Læs fulde historie</a>";
@@ -33,5 +35,13 @@ class NewsView extends View {
         $this->addLink();
         $this->str .= "</div>";
         return $this->build();
+    }
+    public function buildList(){
+        $str = "";
+        foreach($this->model->getArticles() as $article){
+            $viewObj = new NewsView($article);
+            $str .= $viewObj->buildStandard();
+        }
+        return $str;
     }
 }

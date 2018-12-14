@@ -1,7 +1,11 @@
 <?php
-//session_start();
+session_start();
+$_SESSION['style'] = "red";
 define('rootPath', '');
-
+require_once('classes/controllers/controller.php');
+$cont = new Controller();
+$cont->drawPage('frontpage');
+/*
 require_once('classes/models/newsmodel.php');
 require_once('classes/views/newsview.php');
 $newsM =  new NewsModel('https://www.jv.dk/rss/nyheder');
@@ -16,4 +20,5 @@ foreach($articles as $article){
 echo "<pre>";
 print_r($articles);
 echo "</pre>";
+*/
 ?>
