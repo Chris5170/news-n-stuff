@@ -47,14 +47,14 @@ body {
 .nav a {
         margin: 0 2em;
         padding: 0;
-        color: rgba(246, 176, 118, 1);
+        color: #fff;
         font-size: 1.3em;
         font-family: 'Fredericka the Great';
+        text-decoration: none;
 }
 
 .nav a:hover {
-        font-weight: bold;
-        color: black;
+        color: rgb(246, 176, 118);
         transition: .5s ease;
 }
 
