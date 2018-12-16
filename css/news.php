@@ -102,7 +102,7 @@ $newsMBT =  new NewsModel('https://www.berlingske.dk/content/rss');
 $newsM->merge($newsMBT);
 $newsM->sort();
 $articles = $newsM->getArticles();
-$i = 0;
+$i = 1;
 foreach($articles as $article){
     $viewObj = new NewsView($article);
     ?>
