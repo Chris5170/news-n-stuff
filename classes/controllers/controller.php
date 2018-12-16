@@ -12,6 +12,18 @@ class Controller {
                 require_once('classes/models/pagemodel.php');
                 require_once('classes/views/pageview.php');
                 $pageM = new PageModel('Forside');
+                $links = array(
+                    array(
+                        'href' => rootPath . 'css/style.php',
+                        'rel' => 'stylesheet',
+                        'type' => 'text/css'
+                    ),
+                    array(
+                        'href' => 'https://fonts.googleapis.com/css?family=Fredericka+the+Great|Open+Sans',
+                        'rel' => 'stylesheet'
+                    )
+                );
+                $pageM->setLinks($links);
                 $pageV = new PageView($pageM);
                 $pageV->start();
                 //echo Director::getColor();

@@ -55,6 +55,15 @@ class Director extends UserParams {
         $structure[] = array(
             'templates' => array(
                 0 => array(
+                    'file' => 'includes/templates/banner.php',
+                    'style' => 'css/banner.php'
+                )
+            ),
+            'required' => false
+        );
+        $structure[] = array(
+            'templates' => array(
+                0 => array(
                     'file' => 'includes/templates/newslist.php',
                     'style' => 'css/news.php'
                 ),

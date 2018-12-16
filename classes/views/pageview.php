@@ -11,7 +11,28 @@ class PageView extends View {
         <html>
             <head>
                 <title><?php echo $this->model->getTitle(); ?></title>
-                <link rel='stylesheet' type='text/css' href='css/style.php' />
+                <?php
+                foreach($this->model->getLinks() as $link){
+                    if(isset($link['href'])){
+                        $href = 'href="' . $link['href'] . '"';
+                        if(isset($link['type'])){
+                            $type = ' type="' . $link['type'] . '"';
+                        }
+                        else{
+                            $type = "";
+                        }
+                        if(isset($link['rel'])){
+                            $rel = ' rel="' . $link['rel'] . '"';
+                        }
+                        else{
+                            $rel = "";
+                        }
+                        ?>
+                        <link <?php echo $href . $type . $rel ?>>
+                        <?php
+                    }
+                }
+                ?>
             </head>
             <body>
                 <?php

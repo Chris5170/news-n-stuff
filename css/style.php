@@ -7,6 +7,7 @@ require_once('../classes/director.php');
 *{
 	margin: 0;
 	padding: 0;
+	box-sizing: border-box;
 }
 <?php
 Director::getStyle();
