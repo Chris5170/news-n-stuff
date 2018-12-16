@@ -35,7 +35,7 @@
     opacity: 0;
     transition: .5s ease;
     font-size: 1rem;
-    z-index: 1;
+    z-index: 0;
 }
 .news:hover p {
     opacity: 1;
@@ -117,6 +117,8 @@ foreach($articles as $article){
         right: 0;
         position: absolute;
         z-index: 0;
+        background-position: center center;
+        background-size: cover;
     }
     .news:nth-of-type(<?php echo $i; ?>):hover::after{
         opacity: .5;
