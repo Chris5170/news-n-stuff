@@ -9,7 +9,7 @@
   height: 5em;
   width: 100%;
   position: fixed;
-  z-index: 1;
+  z-index: 5;
   top: 0;
 }
 .header {
