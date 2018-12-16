@@ -27,11 +27,15 @@
 .news p, .news h3, .news a{
     text-decoration: none;
     color: <?php echo self::getColor('.news p, .news h3, .news a'); ?>;
-}      
+} 
+.news h3{
+    z-index: 1;
+}     
 .news p {
     opacity: 0;
     transition: .5s ease;
     font-size: 1rem;
+    z-index: 1;
 }
 .news:hover p {
     opacity: 1;
@@ -90,3 +94,35 @@
 .news:nth-of-type(12n+12) {
     grid-column: col 9 / span 4;
 }
+<?php
+require_once('../classes/models/newsmodel.php');
+require_once('../classes/views/newsview.php');
+$newsM =  new NewsModel('https://www.jv.dk/rss/nyheder');
+$newsMBT =  new NewsModel('https://www.berlingske.dk/content/rss');
+$newsM->merge($newsMBT);
+$newsM->sort();
+$articles = $newsM->getArticles();
+$i = 0;
+foreach($articles as $article){
+    $viewObj = new NewsView($article);
+    ?>
+    .news:nth-of-type(<?php echo $i; ?>)::after{
+        content: "";
+        background-image: url('<?php echo $article->getThumb(); ?>');
+        transition: .5s ease;
+        opacity: 1;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        z-index: 0;
+    }
+    .news:nth-of-type(<?php echo $i; ?>):hover::after{
+        opacity: .5;
+        transition: .5s ease;
+    }
+    <?php
+    $i++;
+}
+?>

@@ -1,5 +1,5 @@
 <?php
-require_once 'classes/views/View.php';
+require_once rootPath . 'classes/views/View.php';
 
 class NewsView extends View {
     private $str = "", $parts = array();

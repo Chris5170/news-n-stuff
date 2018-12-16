@@ -23,13 +23,15 @@ class Director extends UserParams {
         );
         */
         $assets['colors'] = array(
-            'rgba(235, 235, 235, 1)',
-            'rgba(76, 76, 76, 1)',
-            'rgb(246, 176, 118)',
-            'rgba(242, 216, 194, 1)',
+            '#EBEBEB',
+            '#4C4C4C',
+            '#F6B076',
+            '#F2D8C2',
             '#f2f2f2',
             '#fff',
-            '#000'
+            '#000',
+            '#8e2a2a',
+            '#f4f4f4'
         );
         $assets['fonts'] = array(
             '"Open sans"',
@@ -91,9 +93,6 @@ class Director extends UserParams {
         self::$age = UserParams::USERAGE;
         self::$gender = UserParams::USERGENDER;
         self::$country = UserParams::USERCOUNTRY;
-        self::$templates['header'] = array('header');
-        self::$templates['content'] = array('banner', 'news');
-        self::$templates['footer'] = array('footer');
     }
     public static function getAge(){
         if (! self::$instance) {
