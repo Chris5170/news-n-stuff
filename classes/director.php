@@ -56,11 +56,11 @@ class Director extends UserParams {
             'templates' => array(
                 0 => array(
                     'file' => 'includes/templates/newslist.php',
-                    'style' => 'css/newslist.php'
+                    'style' => 'css/news.php'
                 ),
                 1 => array(
                     'file' => 'includes/templates/newslist_alt_1.php',
-                    'style' => 'css/newslist_alt_1.php'
+                    'style' => 'css/news_alt_1.php'
                 )
             ),
             'required' => true
@@ -122,7 +122,14 @@ class Director extends UserParams {
         if (! self::$instance) {
             self::$instance = new Director();
         }
-        require_once(rootPath . self::$structure[0]['templates'][0]['style']);
+        foreach(self::$structure as $section){
+            if($section['required']){
+                require_once(rootPath . $section['templates'][0]['style']);
+            }
+            else{
+                require_once(rootPath . $section['templates'][0]['style']);
+            }
+        }
     }
     public static function getStructure(){
         if (! self::$instance) {
