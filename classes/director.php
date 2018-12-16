@@ -31,7 +31,14 @@ class Director extends UserParams {
             '#fff',
             '#000',
             '#8e2a2a',
-            '#f4f4f4'
+            '#3e3e3e',
+            '#bbb',
+            '#3b5998',
+            '#e1306c',
+            '#0077b5',
+            '#fffc00',
+            '#f4f4f4',
+            'rgba(0,0,0,0.4)'
         );
         $assets['fonts'] = array(
             '"Open sans"',

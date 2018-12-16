@@ -14,11 +14,12 @@
     position: relative;
     min-height: 10em;
     max-height: 25em;
+    transition: .5s ease;
 
 }
 .news:hover {
     transition: .5s ease;
-    background: <?php echo self::getColor('.news:hover'); ?>;
+    background-color: <?php echo self::getColor('.news:hover'); ?>;
 }
 .news a {
     padding: 0.5em 1em;
