@@ -42,19 +42,29 @@ class NewsModel extends Model {
         return $this->articles;
     }
     public function getTitle(){
-        return $this->params['title'];
+        if(isset($this->params['title'])){
+            return $this->params['title'];
+        }
     }
     public function getExcerpt(){
-        return $this->params['excerpt'];
+        if(isset($this->params['excerpt'])){
+            return $this->params['excerpt'];
+        }
     }
     public function getThumb(){
-        return $this->params['thumb'];
+        if(isset($this->params['thumb'])){
+            return $this->params['thumb'];
+        }
     }
     public function getLink(){
-        return $this->params['link'];
+        if(isset($this->params['link'])){
+            return $this->params['link'];
+        }
     }
     public function getDate(){
-        return $this->params['date'];
+        if(isset($this->params['date'])){
+            return $this->params['date'];
+        }
     }
     public function getParams(){
         return $this->params;

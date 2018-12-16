@@ -1,8 +1,8 @@
 <?php
 session_start();
-$_SESSION['style'] = "red";
+$_SESSION['age'] = 28;
 define('rootPath', '');
 require_once('classes/controllers/controller.php');
 $cont = new Controller();
-$cont->drawPage('frontpage');
+echo $cont->drawPage('frontpage');
 ?>

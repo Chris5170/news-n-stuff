@@ -6,23 +6,26 @@ class PageView extends View {
     public function __construct($model) {
     	parent::__construct($model);
     }
-    public function build(){
-        $str = "<!DOCTYPE html>";
-        $str .= "<html><head>";
-        $str .= "<title>";
-        $str .= $this->model->getTitle();
-        $str .= "</title>";
-        $str .= "<link rel='stylesheet' type='text/css' href='css/style.php' />
-";
-        $str .= "</head><body>";
-        $str .= $this->content;
-        if($this->model->getScripts()){
-            foreach($this->model->getScripts() as $script){
-                $str .= $script;
-            }
-        }
-        $str .= "</body></html>";
-        return $str;
+    public function start(){ ?>
+        <!DOCTYPE html>
+        <html>
+            <head>
+                <title><?php echo $this->model->getTitle(); ?></title>
+                <link rel='stylesheet' type='text/css' href='css/style.php' />
+            </head>
+            <body>
+                <?php
+    }
+    public function stop(){
+                if($this->model->getScripts()){
+                    foreach($this->model->getScripts() as $script){
+                        echo $script;
+                    }
+                } 
+                ?>
+            </body>
+        </html>
+        <?php
     }
     public function insert($str){
         $this->content .= $str;

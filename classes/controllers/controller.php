@@ -8,6 +8,7 @@ class Controller {
         //print_r($_SESSION);
         switch ($page){
             case 'frontpage':
+                require_once('classes/director.php');
                 require_once('classes/models/pagemodel.php');
                 require_once('classes/views/pageview.php');
                 require_once('classes/models/newsmodel.php');
@@ -19,13 +20,12 @@ class Controller {
                 $newsM->merge($newsMBT);
                 $newsM->sort();
                 $articles = $newsM->getArticles();
-                $str = "";
-                foreach($articles as $article){
-                    $viewObj = new NewsView($article);
-                    $str .= $viewObj->buildStandard();
-                }
-                $pageV->insert($str);
-                echo $pageV->build();
+                $pageV->start();
+                echo Director::getColor();
+                include('includes/templates/header.php');
+                include('includes/templates/newslist.php');
+                include('includes/templates/footer.php');
+                $pageV->stop();
                 break;
             
             default:

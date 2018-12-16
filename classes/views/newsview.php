@@ -44,12 +44,20 @@ class NewsView extends View {
         $this->str .= "</div>";
         return $this->build();
     }
-    public function buildList(){
-        $str = "";
-        foreach($this->model->getArticles() as $article){
-            $viewObj = new NewsView($article);
-            $str .= $viewObj->buildStandard();
+    public function buildTemplate($template){
+        include($template);
+    }
+    public function buildList($template = false){
+        if($template){
+            buildTemplate($template);
         }
-        return $str;
+        else{
+        $str = "";
+            foreach($this->model->getArticles() as $article){
+                $viewObj = new NewsView($article);
+                $str .= $viewObj->buildStandard();
+            }
+            echo $str;
+        }
     }
 }
