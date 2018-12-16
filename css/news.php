@@ -19,7 +19,7 @@
 }
 .news:hover {
     transition: .5s ease;
-    background-color: <?php echo self::getColor('.news:hover'); ?>;
+    //background-color: <?php echo self::getColor('.news:hover'); ?>;
 }
 .news a {
     padding: 0.5em 1em;
@@ -123,7 +123,7 @@ foreach($articles as $article){
         background-size: cover;
     }
     .news:nth-of-type(<?php echo $i; ?>):hover::after{
-        opacity: .5;
+        opacity: .1;
         transition: .5s ease;
     }
     <?php
