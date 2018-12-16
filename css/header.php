@@ -8,7 +8,7 @@
   background-color: <?php echo self::getColor('.header_container'); ?>;
   height: 5em;
   width: 100%;
-  //position: fixed;
+  position: fixed;
   z-index: 1;
   top: 0;
 }
