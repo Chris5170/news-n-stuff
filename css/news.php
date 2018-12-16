@@ -22,20 +22,21 @@
 }
 .news a {
     padding: 0.5em 1em;
-
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: relative; 
 }
 .news p, .news h3, .news a{
     text-decoration: none;
     color: <?php echo self::getColor('.news p, .news h3, .news a'); ?>;
-} 
-.news h3{
     z-index: 1;
-}     
+}  
 .news p {
     opacity: 0;
     transition: .5s ease;
     font-size: 1rem;
-    z-index: 0;
 }
 .news:hover p {
     opacity: 1;
