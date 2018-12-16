@@ -57,6 +57,10 @@ class Director extends UserParams {
                 1 => array(
                     'file' => 'includes/templates/header_alt_1.php',
                     'style' => 'css/header_alt_1.php'
+                ),
+                2 => array(
+                    'file' => 'includes/templates/header_alt_2.php',
+                    'style' => 'css/header_alt_2.php'
                 )
             ),
             'required' => true
@@ -79,6 +83,10 @@ class Director extends UserParams {
                 1 => array(
                     'file' => 'includes/templates/newslist_alt_1.php',
                     'style' => 'css/news_alt_1.php'
+                ),
+                2 => array(
+                    'file' => 'includes/templates/newslist_alt_2.php',
+                    'style' => 'css/news_alt_2.php'
                 )
             ),
             'required' => true
@@ -92,7 +100,12 @@ class Director extends UserParams {
                 1 => array(
                     'file' => 'includes/templates/footer_alt_1.php',
                     'style' => 'css/footer_alt_1.php'
+                ),
+                2 => array(
+                    'file' => 'includes/templates/footer_alt_2.php',
+                    'style' => 'css/footer_alt_2.php'
                 )
+
             ),
             'required' => true
         );
@@ -139,7 +152,7 @@ class Director extends UserParams {
         }
         foreach(self::$structure as $section){
             if($section['required']){
-                require_once(rootPath . $section['templates'][0]['style']);
+                require_once(rootPath . $section['templates'][1]['style']);
             }
             else{
                 require_once(rootPath . $section['templates'][0]['style']);
@@ -152,7 +165,7 @@ class Director extends UserParams {
         }
         foreach(self::$structure as $section){
             if($section['required']){
-                require_once(rootPath . $section['templates'][0]['file']);
+                require_once(rootPath . $section['templates'][1]['file']);
             }
             else{
                 require_once(rootPath . $section['templates'][0]['file']);
