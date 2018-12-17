@@ -1,5 +1,4 @@
 <?php
-session_start();
 require_once rootPath . 'classes/userparams.php';
 
 class Director extends UserParams {
@@ -143,7 +142,12 @@ class Director extends UserParams {
             '.fa-snapchat:hover' => 13
         );
         self::$recipients = $recipients;
-        self::$age = UserParams::USERAGE;
+        if(isset($_SESSION['userAge'])){
+            self::$age = $_SESSION['userAge'];
+        }
+        else{
+            self::$age = UserParams::USERAGE;
+        }
         self::$gender = UserParams::USERGENDER;
         self::$country = UserParams::USERCOUNTRY;
         $tmp = array();

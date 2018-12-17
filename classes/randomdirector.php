@@ -1,5 +1,4 @@
 <?php
-session_start();
 require_once rootPath . 'classes/userparams.php';
 
 class RandomDirector extends UserParams {
