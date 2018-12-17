@@ -1,21 +1,42 @@
-.footer-container {
-    background-color: <?php echo self::getColor('.news_container'); ?>;
-    height: 5em;
-    width: 100%;
-    /*margin-top: 5em;*/
+footer {
+    background: #3e3e3e;
 }
-.footer {
-    height: 5em;
+.wrap {
+    max-width: 70rem;
+    margin: 0 auto;
     width: 100%;
+}
+.some{
     display: flex;
-    flex-flow: row;
-   	justify-content: flex-end;
-    margin-right: 3em;
+    justify-content: space-between;
+    padding: 1em 0;
+    align-items: flex-end;
 }
-.some {
-    margin-right: 2em;
-    margin-top: 1.5em;
+.some ul{
+    display: flex;
+    flex-flow: row wrap;
+    list-style-type: none;
+    font-size: 1.7em;
 }
-.some img {
-    margin-left: 0.5em;
+.some li{
+    font-family: 'Fredericka the great';
+    color: #fff;
+}
+.some li:not(:last-child){
+    margin-right: 1em;
+}
+.some img{
+    max-width: 7em;
+}
+.fa-facebook-square:hover{
+    color: #3b5998;
+}
+.fa-instagram:hover{
+    color: #e1306c;
+}
+.fa-linkedin:hover{
+    color: #0077b5;
+}
+.fa-snapchat:hover{
+    color: #fffc00;
 }

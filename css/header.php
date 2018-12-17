@@ -29,9 +29,9 @@
   .nav a {
   margin: 0 2em;
   padding: 0;
-  color: <?php echo self::getColor('.nav a'); ?>;
+  color: <?php echo self::getColor('.nav a : color'); ?>;
   font-size: 1.3em;
-  font-family: <?php echo self::getFont('.nav a'); ?>;
+  font-family: <?php echo self::getFont('.nav a : font'); ?>;
   text-decoration: none;
 }
   .nav a:hover {

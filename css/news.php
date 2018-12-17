@@ -8,8 +8,8 @@
 }
 
 .news {
-    background-color: <?php echo self::getColor('.news'); ?>;
-    color: <?php echo self::getColor('.news'); ?>;
+    background-color: <?php echo self::getColor('.news : background'); ?>;
+    color: <?php echo self::getColor('.news : color'); ?>;
     font-size: 160%;
     position: relative;
     min-height: 10em;

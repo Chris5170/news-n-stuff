@@ -1,5 +1,5 @@
 .footer-container {
-    background-color: <?php echo self::getColor('.news_container'); ?>;
+    background-color: <?php echo self::getColor('.footer-container'); ?>;
     height: 5em;
     width: 100%;
     /*margin-top: 5em;*/

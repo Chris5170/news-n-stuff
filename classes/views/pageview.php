@@ -13,24 +13,13 @@ class PageView extends View {
                 <title><?php echo $this->model->getTitle(); ?></title>
                 <?php
                 foreach($this->model->getLinks() as $link){
-                    if(isset($link['href'])){
-                        $href = 'href="' . $link['href'] . '"';
-                        if(isset($link['type'])){
-                            $type = ' type="' . $link['type'] . '"';
-                        }
-                        else{
-                            $type = "";
-                        }
-                        if(isset($link['rel'])){
-                            $rel = ' rel="' . $link['rel'] . '"';
-                        }
-                        else{
-                            $rel = "";
-                        }
-                        ?>
-                        <link <?php echo $href . $type . $rel ?>>
-                        <?php
-                    }
+                    $str = "";
+                    foreach($link as $key => $attr){
+                        $str .= " " . $key . "='" . $attr . "'";
+                    } 
+                    ?>
+                        <link <?php echo $str; ?>>
+                    <?php
                 }
                 ?>
             </head>

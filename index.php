@@ -2,5 +2,11 @@
 define('rootPath', '');
 require_once('classes/controllers/controller.php');
 $cont = new Controller();
-echo $cont->drawPage('frontpage');
+if(isset($_GET['page'])){
+	$page = $_GET['page'];
+}
+else{
+	$page = "frontpage";
+}
+echo $cont->drawPage($page);
 ?>

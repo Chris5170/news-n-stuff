@@ -2,10 +2,10 @@
   max-width: 1100px;
   margin: 0 auto;
 }
-header{
-  background:<?php echo self::getColor('header'); ?>;
+.header{
+  background:<?php echo self::getColor('.header'); ?>;
 }
-header .center{
+.header .center{
   display: flex;
   justify-content: space-between;
   align-items: center;

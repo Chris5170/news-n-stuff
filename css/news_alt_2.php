@@ -1,132 +1,95 @@
-.news_container {
-    display: grid;
-    grid-gap: 5px;
-    grid-template-columns: repeat(12, [col] 1fr );
-    grid-template-rows: auto;
-    background-color: <?php echo self::getColor('.news_container'); ?>;
-                
-}
 
-.news {
-    background-color: <?php echo self::getColor('.news'); ?>;
-    color: <?php echo self::getColor('.news'); ?>;
-    font-size: 160%;
-    position: relative;
-    min-height: 10em;
-    max-height: 25em;
-    transition: .5s ease;
-
-}
-.news:hover {
-    transition: .5s ease;
-    //background-color: <?php echo self::getColor('.news:hover'); ?>;
-}
-.news a {
-    padding: 0.5em 1em;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: relative; 
-}
-.news p, .news h3, .news a{
-    text-decoration: none;
-    color: <?php echo self::getColor('.news p, .news h3, .news a'); ?>;
-    z-index: 1;
-}  
-.news p {
-    opacity: 0;
-    transition: .5s ease;
-    font-size: 1rem;
-}
-.news:hover p {
-    opacity: 1;
-}
-.news a{
-    height: 100%;
-    display: block;
+section.Headline {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    flex-flow: row;
+    margin-top: 3em;
+}
+.Headline img {
+    display: flex;
+    object-fit: cover;
+    object-position: 50% 0;
+    height: 30em;
+    width: 30em;
+}
+.Headline h1 {
+    font-size: 2em;
+    margin: 0;
+}
+.ungeNewsSlider {
+    display: flex;
+    background-color: #bbb;
+    margin: 3em auto;
+    padding: 0 1em;
     align-items: center;
-    text-align: center;
-    flex-flow: column wrap;
+    justify-content: space-between;
 }
-
-.news:nth-of-type(12n+1) {
-    grid-column: col / span 3;
+.newsThumbnail {
+    display: flex;
+    width: 90%;
+    overflow: hidden;
 }
-.news:nth-of-type(12n+2) {
-    grid-column: col 4 / span 4;
+.newsThumbnail article {
+    margin: 1em;
+    position: relative;
 }
-.news:nth-of-type(12n+3) {
-    grid-column: col 8 / span 2;
+.newsTitleBox {
+    background-color: rgba(0,0,0,0.4);
+    position: absolute;
+    height: 3em;
+    width: 100%;
+    bottom: 0;
+    color: white;
 }
-.news:nth-of-type(12n+4) {
-    grid-column: col 10 / span 3;
+.newsTitleBox h1{
+    margin-left: 0.5em;
 }
-
-.news:nth-of-type(12n+5) {
-    grid-column: col / span 2;
+.ungeNewsSlider img {
+    display: flex;
+    object-fit: cover;
+    height: 10em;
+    width: 10em;
 }
-
-.news:nth-of-type(12n+6) {
-    grid-column: col 3 / span 4;
+.navBtn {
+    font-size: 6em;
 }
-
-.news:nth-of-type(12n+7) {
-    grid-column: col 7 / span 3;
+.navSlider {
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: space-between;
 }
-
-.news:nth-of-type(12n+8) {
-    grid-column: col 10 / span 3;
+.navSlider a {
+    margin: .5em 2em;
+    align-items: center;
+    display: flex;
+    flex-flow: row wrap;
+    position: relative;
 }
-
-.news:nth-of-type(12n+9) {
-    grid-column: col / span 3;
+.navSlider img {
+    max-height: 5em;
+    margin-bottom: .7em;
 }
-
-.news:nth-of-type(12n+10) {
-    grid-column: col 4 / span 3;
+.ungeSliderContent {
+    display: flex;
+    max-width: 90%;
 }
-
-.news:nth-of-type(12n+11) {
-    grid-column: col 7 / span 2;
+.articleEnv {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
 }
-
-.news:nth-of-type(12n+12) {
-    grid-column: col 9 / span 4;
+.articleEnv article {
+    display: flex;
+    position: relative;
+    min-width: 15em;
+    max-width: 21em;
+    margin-bottom: 1rem;
 }
-<?php
-require_once('../classes/models/newsmodel.php');
-require_once('../classes/views/newsview.php');
-$newsM =  new NewsModel('https://www.jv.dk/rss/nyheder');
-$newsMBT =  new NewsModel('https://www.berlingske.dk/content/rss');
-$newsM->merge($newsMBT);
-$newsM->sort();
-$articles = $newsM->getArticles();
-$i = 1;
-foreach($articles as $article){
-    $viewObj = new NewsView($article);
-    ?>
-    .news:nth-of-type(<?php echo $i; ?>)::after{
-        content: "";
-        background-image: url('<?php echo $article->getThumb(); ?>');
-        transition: .5s ease;
-        opacity: 1;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        position: absolute;
-        z-index: 0;
-        background-position: center center;
-        background-size: cover;
-    }
-    .news:nth-of-type(<?php echo $i; ?>):hover::after{
-        opacity: .1;
-        transition: .5s ease;
-    }
-    <?php
-    $i++;
+.articleEnv img {
+    display: flex;
+    object-fit: cover;
+    object-position: 50% 0;
+    width: 21em;
+    height: 21em;
 }
-?>

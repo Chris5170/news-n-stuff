@@ -1,4 +1,4 @@
-<footer>
+<footer class="footer">
 	<div class="center">
 		<ul>
 			<li>TLF: <a href="tel:01234567">+45 01 23 45 67</a></li>

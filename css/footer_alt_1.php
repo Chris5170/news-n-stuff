@@ -5,17 +5,16 @@
 .logo{
   max-width: 100px;
 }
-footer{
-    background: <?php echo self::getColor('footer'); ?>;
-    margin-top: 2em;
+.footer{
+    background: <?php echo self::getColor('.footer'); ?>;
     padding: 1em;
 }
-footer .center{
+.footer .center{
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
     align-items: center;
 }
-footer ul li{
+.footer ul li{
     list-style: none;
 }

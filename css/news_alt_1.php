@@ -5,7 +5,8 @@
 #articles{
     display: flex;
     justify-content: space-between;
-    flex-flow: row wrap;    
+    flex-flow: row wrap;  
+    margin-bottom: 2em;  
 }
 #articles article{
     width: calc(50% - 1em);

@@ -1,4 +1,4 @@
-<header>
+<header class='header'>
 	<div class="center">
 		<a href="#"><img src="img/logo.png" class="logo"></a> <!-- logo -->
 		<nav id="main_nav"> 
