@@ -13,18 +13,18 @@ class Controller {
                 require_once('classes/views/pageview.php');
                 $pageM = new PageModel('Forside');
                 $links = array(
-                    array(
-                        'href' => rootPath . 'css/style.php',
-                        'rel' => 'stylesheet',
-                        'type' => 'text/css'
-                    ),
-                    array(
-                        'href' => 'https://fonts.googleapis.com/css?family=Fredericka+the+Great|Open+Sans',
-                        'rel' => 'stylesheet'
-                    ),
-                    array(
-                        'rel' => 'stylesheet', 'href' => 'https://use.fontawesome.com/releases/v5.5.0/css/all.css', 'integrity' => 'sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU', 'crossorigin' => 'anonymous'
-                    )
+                            array(
+                                'href' => rootPath . 'css/style.php',
+                                'rel' => 'stylesheet',
+                                'type' => 'text/css'
+                            ),
+                            array(
+                                'href' => 'https://fonts.googleapis.com/css?family=Fredericka+the+Great|Open+Sans',
+                                'rel' => 'stylesheet'
+                            ),
+                            array(
+                                'rel' => 'stylesheet', 'href' => 'https://use.fontawesome.com/releases/v5.5.0/css/all.css', 'integrity' => 'sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU', 'crossorigin' => 'anonymous'
+                            )
                 );
                 $pageM->setLinks($links);
                 $pageV = new PageView($pageM);
@@ -43,21 +43,24 @@ class Controller {
                     require_once('classes/views/pageview.php');
                     $pageM = new PageModel('Forside');
                     $links = array(
-                        array(
-                            'href' => rootPath . 'css/style.php',
-                            'rel' => 'stylesheet',
-                            'type' => 'text/css'
-                        ),
-                        array(
-                            'href' => 'https://fonts.googleapis.com/css?family=Fredericka+the+Great|Open+Sans',
-                            'rel' => 'stylesheet'
-                        )
+                                array(
+                                    'href' => rootPath . 'css/randomstyle.php',
+                                    'rel' => 'stylesheet',
+                                    'type' => 'text/css'
+                                ),
+                                array(
+                                    'href' => 'https://fonts.googleapis.com/css?family=Fredericka+the+Great|Open+Sans',
+                                    'rel' => 'stylesheet'
+                                ),
+                                array(
+                                    'rel' => 'stylesheet', 'href' => 'https://use.fontawesome.com/releases/v5.5.0/css/all.css', 'integrity' => 'sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU', 'crossorigin' => 'anonymous'
+                                )
                     );
                     $pageM->setLinks($links);
                     $pageV = new PageView($pageM);
                     $pageV->start();
                     //echo Director::getColor();
-                    Director::getStructure();
+                    RandomDirector::getStructure();
                     // include('includes/templates/header.php');
                     // include('includes/templates/newslist.php');
                     // include('includes/templates/footer.php');

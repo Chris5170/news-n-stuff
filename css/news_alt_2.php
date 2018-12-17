@@ -1,4 +1,3 @@
-
 section.Headline {
     display: flex;
     justify-content: space-around;
@@ -18,7 +17,7 @@ section.Headline {
 }
 .ungeNewsSlider {
     display: flex;
-    background-color: #bbb;
+    background-color: <?php echo self::getColor('.ungeNewsSlider'); ?>;
     margin: 3em auto;
     padding: 0 1em;
     align-items: center;
@@ -34,12 +33,12 @@ section.Headline {
     position: relative;
 }
 .newsTitleBox {
-    background-color: rgba(0,0,0,0.4);
+    background-color: <?php echo self::getColor('.newsTitleBox : background'); ?>;
     position: absolute;
     height: 3em;
     width: 100%;
     bottom: 0;
-    color: white;
+    color: <?php echo self::getColor('.newsTitleBox : color'); ?>;
 }
 .newsTitleBox h1{
     margin-left: 0.5em;
@@ -92,4 +91,9 @@ section.Headline {
     object-position: 50% 0;
     width: 21em;
     height: 21em;
+}
+.wrap {
+    max-width: 70rem;
+    margin: 0 auto;
+    width: 100%;
 }

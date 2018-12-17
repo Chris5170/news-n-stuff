@@ -1,5 +1,5 @@
-footer {
-    background: #3e3e3e;
+.footer_alt2 {
+    background: <?php echo self::getColor('footer : alt_2'); ?>;
 }
 .wrap {
     max-width: 70rem;
@@ -19,8 +19,8 @@ footer {
     font-size: 1.7em;
 }
 .some li{
-    font-family: 'Fredericka the great';
-    color: #fff;
+    font-family: <?php echo self::getFont('.some li : font'); ?>;
+    color: <?php echo self::getColor('.some li : color'); ?>;
 }
 .some li:not(:last-child){
     margin-right: 1em;
@@ -29,14 +29,14 @@ footer {
     max-width: 7em;
 }
 .fa-facebook-square:hover{
-    color: #3b5998;
+    color: <?php echo self::getColor('.fa-facebook-square:hover'); ?>;
 }
 .fa-instagram:hover{
-    color: #e1306c;
+    color: <?php echo self::getColor('.fa-instagram:hover'); ?>;
 }
 .fa-linkedin:hover{
-    color: #0077b5;
+    color: <?php echo self::getColor('.fa-linkedin:hover'); ?>;
 }
 .fa-snapchat:hover{
-    color: #fffc00;
+    color: <?php echo self::getColor('.fa-snapchat:hover'); ?>;
 }

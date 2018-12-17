@@ -1,4 +1,4 @@
-<footer>
+<footer class="footer_alt2">
     <div class="some wrap">
         <img src="img/logo2.png">
         <ul>

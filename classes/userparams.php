@@ -1,6 +1,6 @@
 <?php
 abstract class UserParams {
-    const USERAGE = 14;
+    const USERAGE = 15;
     const USERGENDER = 'male';
     const USERCOUNTRY = 'DK';
 }

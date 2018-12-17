@@ -3,7 +3,7 @@ session_start();
 require_once rootPath . 'classes/userparams.php';
 
 class Director extends UserParams {
-    private static $instance = FALSE, $age, $gender, $country, $templates, $assets, $structure, $activeTemplates, $recipients;
+    private static $instance = FALSE, $age, $gender, $country, $templates, $assets, $structure, $recipients;
 
     private function __construct() {
         $assets['colors'] = array(
@@ -22,6 +22,10 @@ class Director extends UserParams {
             '#0077b5',
             '#fffc00',
             '#f4f4f4',
+            '#f00',
+            '#008000',
+            '#00f',
+            '#ffa500',
             'rgba(0,0,0,0.4)'
         );
         $assets['fonts'] = array(
@@ -93,24 +97,6 @@ class Director extends UserParams {
             ),
             'required' => true
         );
-        $assets['colors'] = array(
-            '#EBEBEB',
-            '#4C4C4C',
-            '#F6B076',
-            '#F2D8C2',
-            '#f2f2f2',
-            '#fff',
-            '#000',
-            '#8e2a2a',
-            '#3e3e3e',
-            '#bbb',
-            '#3b5998',
-            '#e1306c',
-            '#0077b5',
-            '#fffc00',
-            '#f4f4f4',
-            'rgba(0,0,0,0.4)'
-        );
         $recipients = array(
             '.header_container *' => 0,
             '.header_container' => 1,
@@ -125,8 +111,6 @@ class Director extends UserParams {
             '.news:hover' => 3,
             '.news p, .news h3, .news a' => 6,
             '.footer-container' => 1,
-
-
             '.header' => 14,
             '#main_nav ul li a' => 0,
             '#main_nav .active' => 7,
@@ -134,32 +118,29 @@ class Director extends UserParams {
             '#articles article' => 7,
             '#articles article a' => 7,
             '.footer' => 14,
-
-
-
-            '' => 0,
-            '' => 0,
-            '' => 0,
-            '' => 0,
-            '' => 0,
-            '' => 0,
-            '' => 0,
-            '' => 0,
-            '' => 0,
-            '' => 0,
-            '' => 0,
-            '' => 0,
-            '' => 0,
-            '' => 0,
-            '' => 0,
-            '' => 0,
-            '' => 0,
-            '' => 0,
-            '' => 0,
-            '' => 0,
-            '' => 0,
-            '' => 0,
-            '' => 0
+            'fai' => 5,
+            '#ungeNav' => 9,
+            '#topNav : background' => 6,
+            '#topNav : color' => 5,
+            '#topNav a:visited' => 5,
+            '#topNav a' => 5,
+            'p, h1, a : alt_2' => 0,
+            'a:visited : alt_2' => 6,
+            '.catBox' => 5,
+            '.navSlider a:nth-of-type(4n+1) .catBox' => 15,
+            '.navSlider a:nth-of-type(4n+2) .catBox' => 16,
+            '.navSlider a:nth-of-type(4n+3) .catBox' => 17,
+            '.navSlider a:nth-of-type(4n+4) .catBox' => 18,
+            '.ungeNewsSlider' => 9,
+            '.newsTitleBox : background' => 19,
+            '.newsTitleBox : color' => 5,
+            'footer : alt_2' => 8,
+            '.some li : font' => 1,
+            '.some li : color' => 5,
+            '.fa-facebook-square:hover' => 10,
+            '.fa-instagram:hover' => 11,
+            '.fa-linkedin:hover' => 12,
+            '.fa-snapchat:hover' => 13
         );
         self::$recipients = $recipients;
         self::$age = UserParams::USERAGE;

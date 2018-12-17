@@ -2,27 +2,10 @@
 session_start();
 require_once rootPath . 'classes/userparams.php';
 
-class Director extends UserParams {
+class RandomDirector extends UserParams {
     private static $instance = FALSE, $age, $gender, $country, $templates, $assets, $structure, $activeTemplates;
 
     private function __construct() {
-        /*
-        $assets = array();
-        $assets[] = array(
-            'templates' => array(
-                array(
-                    'name' => 'header'
-                ),
-                array(
-                    'name' => 'header_alt_1'
-                ),
-                array(
-                    'name' => 'header_alt_2'
-                )
-            ),
-            'required' = true
-        );
-        */
         $assets['colors'] = array(
             '#EBEBEB',
             '#4C4C4C',
@@ -39,6 +22,10 @@ class Director extends UserParams {
             '#0077b5',
             '#fffc00',
             '#f4f4f4',
+            '#f00',
+            '#008000',
+            '#00f',
+            '#ffa500',
             'rgba(0,0,0,0.4)'
         );
         $assets['fonts'] = array(
@@ -58,11 +45,11 @@ class Director extends UserParams {
                 1 => array(
                     'file' => 'includes/templates/header_alt_1.php',
                     'style' => 'css/header_alt_1.php'
-                )/*,
+                ),
                 2 => array(
                     'file' => 'includes/templates/header_alt_2.php',
                     'style' => 'css/header_alt_2.php'
-                )*/
+                )
             ),
             'required' => true
         );
@@ -84,11 +71,11 @@ class Director extends UserParams {
                 1 => array(
                     'file' => 'includes/templates/newslist_alt_1.php',
                     'style' => 'css/news_alt_1.php'
-                )/*,
+                ),
                 2 => array(
                     'file' => 'includes/templates/newslist_alt_2.php',
                     'style' => 'css/news_alt_2.php'
-                )*/
+                )
             ),
             'required' => true
         );
@@ -101,11 +88,11 @@ class Director extends UserParams {
                 1 => array(
                     'file' => 'includes/templates/footer_alt_1.php',
                     'style' => 'css/footer_alt_1.php'
-                )/*,
+                ),
                 2 => array(
                     'file' => 'includes/templates/footer_alt_2.php',
                     'style' => 'css/footer_alt_2.php'
-                )*/
+                )
 
             ),
             'required' => true
@@ -128,39 +115,39 @@ class Director extends UserParams {
     }
     public static function getAge(){
         if (! self::$instance) {
-            self::$instance = new Director();
+            self::$instance = new RandomDirector();
         }
         return self::$age;
     }
     public static function getGender(){
         if (! self::$instance) {
-            self::$instance = new Director();
+            self::$instance = new RandomDirector();
         }
         return self::$gender;
     }
     public static function getCountry(){
         if (! self::$instance) {
-            self::$instance = new Director();
+            self::$instance = new RandomDirector();
         }
         return self::$country;
     }
     public static function getColor($recipient = false){
         if (! self::$instance) {
-            self::$instance = new Director();
+            self::$instance = new RandomDirector();
         }
         $len = count(self::$assets['colors']);
         return self::$assets['colors'][rand(0, $len - 1)];
     }
     public static function getFont($recipient = false){
         if (! self::$instance) {
-            self::$instance = new Director();
+            self::$instance = new RandomDirector();
         }
         $len = count(self::$assets['fonts']);
         return self::$assets['fonts'][rand(0, $len - 1)];
     }
     public static function getStyle(){
         if (! self::$instance) {
-            self::$instance = new Director();
+            self::$instance = new RandomDirector();
         }
         $iterator = 0;
         foreach(self::$structure as $section){
@@ -177,7 +164,7 @@ class Director extends UserParams {
     }
     public static function getStructure(){
         if (! self::$instance) {
-            self::$instance = new Director();
+            self::$instance = new RandomDirector();
         }
         $iterator = 0;
         foreach(self::$structure as $section){
@@ -186,7 +173,9 @@ class Director extends UserParams {
                 $iterator++;
             }
             else{
-                require_once(rootPath . $section['templates'][self::$activeTemplates[$iterator]]['file']);
+                if(rand(0,1)){
+                    require_once(rootPath . $section['templates'][self::$activeTemplates[$iterator]]['file']);
+                }
                 $iterator++;
             }
         }

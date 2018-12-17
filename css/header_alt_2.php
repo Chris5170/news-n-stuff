@@ -1,16 +1,16 @@
 i {
-    color: #fff;
+    color: <?php echo self::getColor('fai'); ?>;
     transition: .5s ease;
 }
 i:hover{
     transition: .5s ease;
 }
 #ungeNav {
-    background-color: #bbb;
+    background-color: <?php echo self::getColor('#ungeNav'); ?>;
 }
 #topNav {
-    background-color: black;
-    color: white;
+    background-color: <?php echo self::getColor('#topNav : background'); ?>;
+    color: <?php echo self::getColor('#topNav : color'); ?>;
     display: flex;
     padding-top: .2em;
     padding-bottom: .2em;
@@ -20,10 +20,10 @@ i:hover{
     margin-right: 1em;
 }
 #topNav a:visited {
-    color: white;
+    color: <?php echo self::getColor('#topNav a:visited'); ?>;
 }
 #topNav a {
-    color: #fff;
+    color: <?php echo self::getColor('#topNav a'); ?>;
 }
 #topNav .wrap {
     display: flex;
@@ -39,60 +39,64 @@ i:hover{
     flex-flow: row wrap:;
 }
 p, h1, a {
-    font-family: "Open Sans";
+    font-family: <?php echo self::getFont('p, h1, a : alt_2'); ?>;
     text-decoration: none;
     
 }
 a:visited {
-    color: black;
-}
-
-/* All IDs here */
-
-
-#primary {
-    
-}
-#ungeNav {
-    
+    color: <?php echo self::getColor('a:visited : alt_2'); ?>;
 }
 #ungeNavContainer {
     display: flex;
 }
-
-/* All CLASSES here */
-
-/*.left {
-    position: absolute;
-    left: 20px;
-}
-.right {
-    position: absolute;
-    right: 20px;
-}*/
 .catBox {
     display: flex;
     position: absolute;
     bottom: 0;
     align-items: center;
     justify-content: center;
-    color: #fff;
+    color: <?php echo self::getColor('.catBox'); ?>;
     font-weight: 700;
     text-transform: uppercase;
     width: 100%;
 }
 .navSlider a:nth-of-type(4n+1) .catBox{
-    background: red;
+    background: <?php echo self::getColor('.navSlider a:nth-of-type(4n+1) .catBox'); ?>;
 }
 .navSlider a:nth-of-type(4n+2) .catBox{
-    background: green;
+    background: <?php echo self::getColor('.navSlider a:nth-of-type(4n+2) .catBox'); ?>;
 }
 .navSlider a:nth-of-type(4n+3) .catBox{
-    background: blue;
+    background: <?php echo self::getColor('.navSlider a:nth-of-type(4n+3) .catBox'); ?>;
 }
 .navSlider a:nth-of-type(4n+4) .catBox{
-    background: orange;
+    background: <?php echo self::getColor('.navSlider a:nth-of-type(4n+4) .catBox'); ?>;
 }
 .catBox p {
     padding: 0.3rem .7rem;
+}
+.navBtn {
+    font-size: 6em;
+}
+.navSlider {
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: space-between;
+}
+.navSlider a {
+    margin: .5em 2em;
+    align-items: center;
+    display: flex;
+    flex-flow: row wrap;
+    position: relative;
+}
+.navSlider img {
+    max-height: 5em;
+    margin-bottom: .7em;
+}
+.wrap {
+    max-width: 70rem;
+    margin: 0 auto;
+    width: 100%;
 }
